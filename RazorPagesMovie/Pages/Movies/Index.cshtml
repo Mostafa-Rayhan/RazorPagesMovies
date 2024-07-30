@@ -1,4 +1,6 @@
 ﻿@page
+@* @page "{searchString?}" *@
+@* @page "{id:int?}" *@
 @model RazorPagesMovie.Pages.Movies.IndexModel
 
 @{
@@ -10,6 +12,17 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        <select asp-for="MovieGenre" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -49,10 +62,10 @@
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td> *@
             <td>
-              <a href="/Movies/Edit?id=1">Edit</a> |
-              <a href="/Movies/Details?id=1">Details</a> |
-              <a href="/Movies/Delete?id=1">Delete</a>
-            </td>   
+              <a href="/Movies/Edit/1">Edit</a> |
+              <a href="/Movies/Details/1">Details</a> |
+              <a href="/Movies/Delete/1">Delete</a>
+            </td>  
         </tr>
 }
     </tbody>
