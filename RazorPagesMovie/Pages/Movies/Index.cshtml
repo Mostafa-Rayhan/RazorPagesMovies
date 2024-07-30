@@ -43,11 +43,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
-            <td>
+@*             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+            </td> *@
+            <td>
+              <a href="/Movies/Edit?id=1">Edit</a> |
+              <a href="/Movies/Details?id=1">Details</a> |
+              <a href="/Movies/Delete?id=1">Delete</a>
+            </td>   
         </tr>
 }
     </tbody>
